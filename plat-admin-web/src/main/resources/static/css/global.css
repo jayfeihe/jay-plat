@@ -1,0 +1,16 @@
+.center{
+    margin: 0 auto;
+    width: 80%;
+}
+div{
+    text-align:center
+}
+.navbar{
+    background: #00bcd4;
+}
+.navbar-brand{
+    font-size: large;
+}
+#top{
+    height: 50px;
+}

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
+ * 项目首页
  * Created by hetiewei on 2017/2/23.
  */
 @Controller

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="/css/global.css" rel="stylesheet" type="text/css"/>
+<script src="/javascript/jquery/jquery-1.12.4.min.js"></script>
+<!-- bootstrap -->
+<link href="/javascript/bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="/javascript/bootstrap4/js/bootstrap.js"></script>
+
+<!-- bootstrap-table插件-->
+<script src="/javascript/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/javascript/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<link href="/javascript/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="/javascript/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js"></script>
+<script src="/javascript/bootstrap-table/extensions/editable/bootstrap-editable.js"></script>
+<link href="/javascript/bootstrap-table/extensions/editable/bootstrap-editable.css" rel="stylesheet" type="text/css"/>
+
+<!-- Vue.js-->
+<!--<script src="/javascript/vue/vue.js"></script>
+<script src="/js/demo1/demo1.js"></script>-->
+<script src="/js/user/list.js"></script>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div id="top">
+    <nav id="mainNav" class="navbar navbar-fixed-top">
+        <div class="navbar-container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">JayPlat组件式平台</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">关于</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/login">登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="center" class="center">
+    <table id="table"
+           data-toggle="table"
+           data-pagination="true"
+           data-show-export="true"
+           data-url="/data1.json">
+        <thead>
+        <tr>
+            <th data-field="id">ID</th>
+            <th data-field="name" data-editable="true">Item Name</th>
+            <th data-field="price" data-editable="true">Item Price</th>
+        </tr>
+        </thead>
+    </table>
+
+</div>
+
+</body>
+</html>

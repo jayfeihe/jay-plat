@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="/css/global.css" rel="stylesheet" type="text/css"/>
+
+<!-- jQuery metro 样式-->
 <script src="/javascript/jquery/jquery-1.12.4.min.js"></script>
 <link href="/javascript/metro/metro.css" rel="stylesheet" type="text/css"/>
 
+<!-- bootstrap -->
 <link href="/javascript/bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <script src="/javascript/bootstrap4/js/bootstrap.js"></script>
 
+<!-- Vue.js-->
 <script src="/javascript/vue/vue.js"></script>
 <script src="/js/demo1/demo1.js"></script>
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-
 </head>
-<body style="background:#2196f3">
+<body style="background:#2196f3;">
 <div id="app">
     {{message}}
 </div>
 <br/><br/><br/>
-<center>
-    <h1>JayPlat组件式平台</h1>
+<div id="top">
+    <nav id="mainNav" class="navbar navbar-fixed-top">
+        <div class="navbar-container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">JayPlat组件式平台</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">关于</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/login">登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="center" class="center">
     <div class="metro-layout horizontal">
 
 
@@ -30,41 +60,31 @@
                     <tr>
                         <td>
                             <a class="box" href="#">
-
                                 <span>Mail</span>
-
-                                <img class="icon" src="/img/metro/mail.png" alt=""/> </a>
+                                <img class="icon" src="/img/metro/mail.png" alt=""/></a>
                         </td>
 
                         <td colspan="2" rowspan="2">
-                            <a class="box width2 height2" href="http://sc.chinaz.com/">
-
-                                <span>Photos</span>
-
+                            <a class="box width2 height2" href="/user/list">
+                                <span>管理平台</span>
                                 <img class="cover" src="/img/metro/gallery.jpg" alt=""/> </a>
                         </td>
 
                         <td>
                             <a class="box" href="#" style="background: #3c5b9b;">
-
-                                <span>Facebook</span>
-
+                                <span>博客系统</span>
                                 <img class="icon" src="/img/metro/facebook.png" alt=""/> </a>
                         </td>
                         <td rowspan="2">
                             <a class="box height2" href="#" style="background: #4c5e51;">
-
                                 <span>DeviantART</span>
-
                                 <img class="icon big" src="/img/metro/deviantart.png" alt=""/> </a>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <a class="box" href="#" style="background: #6b6b6b;">
-
                                 <span>Settings</span>
-
                                 <img class="icon" src="/img/metro/settings.png" alt=""/> </a>
                         </td>
 
@@ -77,141 +97,49 @@
                     <tr>
                         <td>
                             <a class="box" href="#" style="background: #43b51f;">
-
                                 <span>Make a call</span>
-
                                 <img class="icon" src="/img/metro/phone.png" alt=""/> </a>
                         </td>
                         <td>
                             <a class="box" href="#" style="background: #f58d00;">
-
                                 <span>Firefox</span>
-
                                 <img class="icon" src="/img/metro/firefox.png" alt=""/> </a>
                         </td>
                         <td rowspan="2">
                             <a class="box height2" href="#" style="background: #d32c2c;">
-
                                 <span>GMail</span>
-
                                 <img class="icon big" src="/img/metro/gmail.png" alt=""/> </a>
                         </td>
                         <td>
                             <a class="box" href="#" style="background: #00a9ec;">
-
                                 <span>Tasks</span>
-
                                 <img class="icon" src="/img/metro/tasks.png" alt=""/> </a>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <a class="box" href="#" style="background: #00aeef;">
-
-                                <span>Music</span>
-
+                                <span>云收藏</span>
                                 <img class="icon" src="/img/metro/music.png" alt=""/> </a>
                         </td>
                         <td>
                             <a class="box" href="#" style="background: #640f6c;">
-
                                 <span>Yahoo</span>
-
                                 <img class="icon" src="/img/metro/yahoo.png" alt=""/> </a>
                         </td>
                         <td>
                             <a class="box" href="#" style="background: #f874a4;">
-
                                 <span>Dribbble</span>
-
                                 <img class="icon" src="/img/metro/dribbble.png" alt=""/> </a>
                         </td>
                     </tr>
                 </table>
-                <!--
-                            <a class="box" href="#">
 
-                                <span>Mail</span>
-
-                                <img class="icon" src="/img/metro/mail.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #6b6b6b;">
-
-                                <span>Settings</span>
-
-                                <img class="icon" src="/img/metro/settings.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #43b51f;">
-
-                                <span>Make a call</span>
-
-                                <img class="icon" src="/img/metro/phone.png" alt="" />				</a>
-
-                            <a class="box width2 height2" href="http://sc.chinaz.com/">
-
-                                <span>Photos</span>
-
-                                <img class="cover" src="/img/metro/gallery.jpg" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #00aeef;">
-
-                                <span>Music</span>
-
-                                <img class="icon" src="/img/metro/music.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #f58d00;">
-
-                                <span>Firefox</span>
-
-                                <img class="icon" src="/img/metro/firefox.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #640f6c;">
-
-                                <span>Yahoo</span>
-
-                                <img class="icon" src="/img/metro/yahoo.png" alt="" />				</a>
-
-                            <a class="box height2" href="#" style="background: #d32c2c;">
-
-                                <span>GMail</span>
-
-                                <img class="icon big" src="/img/metro/gmail.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #3c5b9b;">
-
-                                <span>Facebook</span>
-
-                                <img class="icon" src="/img/metro/facebook.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #ffc808;">
-
-                                <span>Winamp</span>
-
-                                <img class="icon" src="/img/metro/winamp.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #00a9ec;">
-
-                                <span>Tasks</span>
-
-                                <img class="icon" src="/img/metro/tasks.png" alt="" />				</a>
-
-                            <a class="box height2" href="#" style="background: #4c5e51;">
-
-                                <span>DeviantART</span>
-
-                                <img class="icon big" src="/img/metro/deviantart.png" alt="" />				</a>
-
-                            <a class="box" href="#" style="background: #f874a4;">
-
-                                <span>Dribbble</span>
-
-                                <img class="icon" src="/img/metro/dribbble.png" alt="" />				</a>
-                             -->
             </div>
 
         </div>
     </div>
-</center>
+</div>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-//package com.jay.config;
+package com.jay.config;//package com.jay.config;
 //
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;

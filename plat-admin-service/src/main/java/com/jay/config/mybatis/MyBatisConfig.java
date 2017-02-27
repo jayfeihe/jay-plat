@@ -30,7 +30,7 @@ public class MyBatisConfig {
 	@Autowired
 	private DataSourceProperties dataSourceProperties;
 	//mybatis mapper xml的搜索路径
-	private final static String mapperLocations = "classpath:com/jay/dao/*/*.xml";
+	private final static String mapperLocations = "classpath:mybatis/*.xml";
 	
 	private DruidDataSource dataSource;
 	
@@ -62,7 +62,7 @@ public class MyBatisConfig {
 	/*
 	 * 配置MyBatis的SqlSessionFactory，指定Mapper的xml路径
 	 */
-	@Bean
+	@Bean(value = "sqlSessionFactory")
 	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {		
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());		
