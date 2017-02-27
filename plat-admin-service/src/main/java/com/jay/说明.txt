@@ -1,0 +1,27 @@
+1.Dao层使用了MyBatis+Batis-Spring的依赖，使用Druid作为连接池    --- 相关的配置，参考：config包下的MyBatis配置
+  Dao层的依赖：
+        <!-- 使用MyBatis操作数据库 -->
+        <dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis.spring.version}</version>
+		</dependency>
+		<!-- 使用Druid连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+
+运行示例：
+    批量新增：        http://localhost:9001/user/batchSave
+    按登录名查询：http://localhost:9001/user/find/{username}

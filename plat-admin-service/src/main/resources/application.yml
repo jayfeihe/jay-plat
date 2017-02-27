@@ -1,0 +1,17 @@
+server:
+  port: 9001
+spring:
+  cloud:
+    config:
+      uri: http://127.0.0.1:${config.port:8888} #配置管理服务地址
+      name: cloud-config-admin-db,cloud-config-demo-service  #远程的配置文件名称
+      profile: ${config.profile:dev}   #当前profile环境为dev
+  application:
+    name: cloud-admin-service  #指定进行服务注册时该服务的名称，即：调用服务时的服务标识符,项目名称尽量用小写
+#以下配置发现与注册服务器地址信息
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka/    # 指定注册中心的ip，即：eureka服务器配置中的eureka.client.serviceUrl.defaultZone
+  instance:
+    preferIpAddress: true

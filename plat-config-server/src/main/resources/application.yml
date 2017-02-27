@@ -1,5 +1,5 @@
 server:
-  port: 10000 #配置中心启动占用端口10000
+  port: 8888 #配置中心启动占用端口10000
 spring:
   cloud:
     config:
