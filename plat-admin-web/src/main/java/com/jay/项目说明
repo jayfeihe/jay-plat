@@ -1,0 +1,6 @@
+1.该项目是所有其他分布式项目的管理入口，实现了权限控制(用户，角色，权限)和数据控制，以及分布式的Session和站内信(WebSocket功能)
+2.依赖条件：
+  1.启动redis
+3.使用技术栈
+  Spring MVC + Spring Session + Spring data redis + Vue.jss + thymeleaf
+4.

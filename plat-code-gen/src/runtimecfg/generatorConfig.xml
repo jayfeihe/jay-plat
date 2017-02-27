@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	
+  	<context id="MySQLTables" targetRuntime="MyBatis3">
+  	    <!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
+  	    <commentGenerator>
+	        <property name="suppressAllComments" value="true" />
+	    </commentGenerator>
+  
+		<!-- MySQL数据库链接URL、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+			connectionURL="jdbc:mysql://localhost:3306/jay_db1" 
+			userId="root" 
+			password="root">
+		</jdbcConnection>
+		
+		<!-- 是否去除自动生成的注释true:是 false:否 -->
+		<!--
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		-->
+	
+	    <javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+	    </javaTypeResolver>
+		
+		<!-- 生成模型的包名和位置 -->
+		<javaModelGenerator targetPackage="com.jay.bean" targetProject="F:\src">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="false" />
+		</javaModelGenerator>
+		
+		<!-- 生成的映射文件包名和位置 -->
+		<sqlMapGenerator targetPackage="com.jay.dao" targetProject="F:\src">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		
+		<!-- 生成DAO的包名和位置 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.jay.dao" targetProject="F:\src">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		
+		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+		
+	    <table tableName="address" domainObjectName="Address" enableCountByExample="false" 
+	    	enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />  
+  	</context>
+	
+</generatorConfiguration>

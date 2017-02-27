@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="/javascript/jquery/jquery-1.12.4.min.js"></script>
+<link href="/javascript/metro/metro.css" rel="stylesheet" type="text/css"/>
+
+<link href="/javascript/bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="/javascript/bootstrap4/js/bootstrap.js"></script>
+
+<script src="/javascript/vue/vue.js"></script>
+<script src="/js/demo1/demo1.js"></script>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+
+</head>
+<body style="background:#2196f3">
+<div id="app">
+    {{message}}
+</div>
+<br/><br/><br/>
+<center>
+    <h1>JayPlat组件式平台</h1>
+    <div class="metro-layout horizontal">
+
+
+        <div class="content clearfix">
+
+            <div class="items">
+                <table>
+                    <tr>
+                        <td>
+                            <a class="box" href="#">
+
+                                <span>Mail</span>
+
+                                <img class="icon" src="/img/metro/mail.png" alt=""/> </a>
+                        </td>
+
+                        <td colspan="2" rowspan="2">
+                            <a class="box width2 height2" href="http://sc.chinaz.com/">
+
+                                <span>Photos</span>
+
+                                <img class="cover" src="/img/metro/gallery.jpg" alt=""/> </a>
+                        </td>
+
+                        <td>
+                            <a class="box" href="#" style="background: #3c5b9b;">
+
+                                <span>Facebook</span>
+
+                                <img class="icon" src="/img/metro/facebook.png" alt=""/> </a>
+                        </td>
+                        <td rowspan="2">
+                            <a class="box height2" href="#" style="background: #4c5e51;">
+
+                                <span>DeviantART</span>
+
+                                <img class="icon big" src="/img/metro/deviantart.png" alt=""/> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="box" href="#" style="background: #6b6b6b;">
+
+                                <span>Settings</span>
+
+                                <img class="icon" src="/img/metro/settings.png" alt=""/> </a>
+                        </td>
+
+                        <td>
+                            <a class="box" href="http://127.0.0.1:8080/" style="background: #ffc808;">
+                                <span>MyBatis代码生成器</span>
+                                <img class="icon" src="/img/metro/winamp.png" alt=""/> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="box" href="#" style="background: #43b51f;">
+
+                                <span>Make a call</span>
+
+                                <img class="icon" src="/img/metro/phone.png" alt=""/> </a>
+                        </td>
+                        <td>
+                            <a class="box" href="#" style="background: #f58d00;">
+
+                                <span>Firefox</span>
+
+                                <img class="icon" src="/img/metro/firefox.png" alt=""/> </a>
+                        </td>
+                        <td rowspan="2">
+                            <a class="box height2" href="#" style="background: #d32c2c;">
+
+                                <span>GMail</span>
+
+                                <img class="icon big" src="/img/metro/gmail.png" alt=""/> </a>
+                        </td>
+                        <td>
+                            <a class="box" href="#" style="background: #00a9ec;">
+
+                                <span>Tasks</span>
+
+                                <img class="icon" src="/img/metro/tasks.png" alt=""/> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="box" href="#" style="background: #00aeef;">
+
+                                <span>Music</span>
+
+                                <img class="icon" src="/img/metro/music.png" alt=""/> </a>
+                        </td>
+                        <td>
+                            <a class="box" href="#" style="background: #640f6c;">
+
+                                <span>Yahoo</span>
+
+                                <img class="icon" src="/img/metro/yahoo.png" alt=""/> </a>
+                        </td>
+                        <td>
+                            <a class="box" href="#" style="background: #f874a4;">
+
+                                <span>Dribbble</span>
+
+                                <img class="icon" src="/img/metro/dribbble.png" alt=""/> </a>
+                        </td>
+                    </tr>
+                </table>
+                <!--
+                            <a class="box" href="#">
+
+                                <span>Mail</span>
+
+                                <img class="icon" src="/img/metro/mail.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #6b6b6b;">
+
+                                <span>Settings</span>
+
+                                <img class="icon" src="/img/metro/settings.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #43b51f;">
+
+                                <span>Make a call</span>
+
+                                <img class="icon" src="/img/metro/phone.png" alt="" />				</a>
+
+                            <a class="box width2 height2" href="http://sc.chinaz.com/">
+
+                                <span>Photos</span>
+
+                                <img class="cover" src="/img/metro/gallery.jpg" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #00aeef;">
+
+                                <span>Music</span>
+
+                                <img class="icon" src="/img/metro/music.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #f58d00;">
+
+                                <span>Firefox</span>
+
+                                <img class="icon" src="/img/metro/firefox.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #640f6c;">
+
+                                <span>Yahoo</span>
+
+                                <img class="icon" src="/img/metro/yahoo.png" alt="" />				</a>
+
+                            <a class="box height2" href="#" style="background: #d32c2c;">
+
+                                <span>GMail</span>
+
+                                <img class="icon big" src="/img/metro/gmail.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #3c5b9b;">
+
+                                <span>Facebook</span>
+
+                                <img class="icon" src="/img/metro/facebook.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #ffc808;">
+
+                                <span>Winamp</span>
+
+                                <img class="icon" src="/img/metro/winamp.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #00a9ec;">
+
+                                <span>Tasks</span>
+
+                                <img class="icon" src="/img/metro/tasks.png" alt="" />				</a>
+
+                            <a class="box height2" href="#" style="background: #4c5e51;">
+
+                                <span>DeviantART</span>
+
+                                <img class="icon big" src="/img/metro/deviantart.png" alt="" />				</a>
+
+                            <a class="box" href="#" style="background: #f874a4;">
+
+                                <span>Dribbble</span>
+
+                                <img class="icon" src="/img/metro/dribbble.png" alt="" />				</a>
+                             -->
+            </div>
+
+        </div>
+    </div>
+</center>
+
+</body>
+</html>
