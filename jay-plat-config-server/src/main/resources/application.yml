@@ -1,0 +1,10 @@
+server:
+  port: 10000 #配置中心启动占用端口10000
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jayfeihe/jay-plat.git  #设置git地址
+          search-paths:
+            - plat-configs  #设置git地址下的扫描路径
