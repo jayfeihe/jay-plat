@@ -54,6 +54,24 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
+		<!-- Shiro  标签必须是thymeleaf3版本-->
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf-spring4</artifactId>
+			<version>3.0.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf</artifactId>
+			<version>3.0.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -82,8 +100,20 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-spring</artifactId>
+			<artifactId>shiro-ehcache</artifactId>
 			<version>${shiro.version}</version>
+		</dependency>
+		<!-- 自定义工具类 -->
+		<dependency>
+			<groupId>com.jay</groupId>
+			<artifactId>demo-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- Thymeleaf 中使用Shiro标签的依赖-->
+		<dependency>
+			<groupId>com.github.theborakompanioni</groupId>
+			<artifactId>thymeleaf-extras-shiro</artifactId>
+			<version>2.0.0</version>
 		</dependency>
 
 	</dependencies>

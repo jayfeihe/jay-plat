@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="/css/global.css" rel="stylesheet" type="text/css"/>
+
+<!-- jQuery metro 样式-->
+<script src="/javascript/jquery/jquery-1.12.4.min.js"></script>
+<link href="/javascript/metro/metro.css" rel="stylesheet" type="text/css"/>
+
+<!-- bootstrap -->
+<link href="/javascript/bootstrap4/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script src="/javascript/bootstrap4/js/bootstrap.js"></script>
+<!-- Vue.js-->
+<script src="/javascript/vue/vue.js"></script>
+<script src="/javascript/vue/vue-resource.min.js"></script>
+<script src="/javascript/parsleyjs/dist/parsley.min.js"></script>
+
+<link rel="stylesheet" href="/javascript/fontawesome/css/font-awesome.min.css"/>
+<link href="/css/app.css" rel="stylesheet" type="text/css"/>
+<link href="/css/theme-i.css" rel="stylesheet" type="text/css"/>
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div id="top">
+    <nav id="mainNav" class="navbar navbar-fixed-top">
+        <div class="navbar-container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">JayPlat组件式平台</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">关于</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/login">登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="center" class="center">
+    <div class="wrapper">
+        <div class="block-center mt-xl wd-xl">
+            <div class="panel panel-dark panel-flat">
+               <!-- <div class="panel-heading text-center">
+                    <a href="/index">
+                        <img src="/img/logo.png" alt="Image" class="block-center img-rounded"/>
+                    </a>
+                </div>-->
+                <div class="panel-body" id="loginPage">
+                    <p class="text-center pv">请登录</p>
+                    <form id="form" data-parsley-validate="true" onsubmit="return false">
+                        <div class="form-group has-feedback">
+                            <input type="text" placeholder="邮箱地址或登录名称" v-model="username" class="form-control" data-parsley-error-message="请输入邮箱地址或登录名称" required="required" />
+                            <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" placeholder="密码" v-model="password" class="form-control" data-parsley-error-message="请输入密码" required="required" />
+                            <span class="fa fa-lock form-control-feedback text-muted"></span>
+                        </div>
+                        <div class="clearfix">
+                            <div class="pull-right">
+                                <a href="/forgotPassword" class="text-muted">忘记密码？</a>
+                            </div>
+                        </div>
+                        <button v-on:click="login" class="btn btn-block btn-primary mt-lg">登录</button>
+                    </form>
+                    <div id="errorMsg" class="alert alert-danger text-center" style="display:none;"></div>
+                    <p class="pt-lg text-center">需要注册？</p>
+                    <a href="/register" class="btn btn-block btn-default">现在就注册</a>
+                </div>
+            </div>
+            <div class="p-lg text-center">
+                <span>&copy;</span>
+                <span>2017</span>
+                <span>-</span>
+                <span>JayPlat</span>
+                <br/>
+                <span>871825513@qq.com</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="/js//user/login.js"></script>
+</html>

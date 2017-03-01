@@ -56,17 +56,37 @@
            data-toggle="table"
            data-pagination="true"
            data-show-export="true"
-           data-url="/data1.json">
+           data-url="/user/data">
         <thead>
         <tr>
-            <th data-field="id">ID</th>
+            <th data-field="id" rowspan="2">ID</th>
+            <th colspan="2">Item Detail</th>
+        </tr>
+        <tr>
             <th data-field="name" data-editable="true">Item Name</th>
             <th data-field="price" data-editable="true">Item Price</th>
         </tr>
         </thead>
     </table>
 
+    <!--<table id="table"-->
+           <!--data-toolbar="#toolbar"-->
+           <!--data-search="true"-->
+           <!--data-show-refresh="true"-->
+           <!--data-show-toggle="true"-->
+           <!--data-show-columns="true"-->
+           <!--data-show-export="true"-->
+           <!--data-detail-view="true"-->
+           <!--data-detail-formatter="detailFormatter"-->
+           <!--data-minimum-count-columns="2"-->
+           <!--data-show-pagination-switch="true"-->
+           <!--data-pagination="true"-->
+           <!--data-id-field="id"-->
+           <!--data-page-list="[10, 25, 50, 100, ALL]"-->
+           <!--data-show-footer="false"-->
+           <!--data-side-pagination="server"-->
+           <!--data-url="/user/data">-->
+    <!--</table>-->
 </div>
-
 </body>
 </html>

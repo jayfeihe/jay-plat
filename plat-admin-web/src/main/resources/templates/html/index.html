@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 <link href="/css/global.css" rel="stylesheet" type="text/css"/>
 
 <!-- jQuery metro 样式-->
@@ -41,7 +41,13 @@
                     <li class="page-scroll">
                         <a href="#about">关于</a>
                     </li>
-                    <li class="page-scroll">
+                   <!-- <li th:text="${username}">
+                        <a href="/login">登录</a>
+                    </li>-->
+                   <li shiro:authenticated="">
+                        <a>Hello, <span th:text="${username}">您还未登录！</span></a>
+                    </li>
+                    <li shiro:guest="" class="page-scroll">
                         <a href="/login">登录</a>
                     </li>
                 </ul>
@@ -50,6 +56,9 @@
     </nav>
 </div>
 <div id="center" class="center">
+
+    Hello, <span th:text="${username}">您还未登录！</span>!!!
+    <br/>
     <div class="metro-layout horizontal">
 
 
