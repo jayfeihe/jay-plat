@@ -1,12 +1,17 @@
 package com.jay.shiro;
 
+import com.jay.base.Resource;
+import com.jay.base.Role;
 import com.jay.base.User;
+import com.jay.service.base.ResourceService;
+import com.jay.service.base.RoleService;
 import com.jay.service.base.UserService;
 import com.jay.vo.base.common.CommonConstants;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -14,6 +19,10 @@ import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Shiro的登录与认证模块
@@ -25,6 +34,12 @@ public class UserRealm extends AuthorizingRealm{
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleService roleService;
+
+    @Autowired
+    private ResourceService resourceService;
 
     public UserRealm() {
         setName("UserRealm");
@@ -39,7 +54,37 @@ public class UserRealm extends AuthorizingRealm{
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        return null;
+        logger.info("Shiro 获取授权信息");
+        if (principals == null) {
+            return null;
+        }
+        //1.获取当前登录用户
+        String username = principals.getPrimaryPrincipal().toString();
+
+        //2.添加登录用户的角色信息
+        //3.添加角色可访问的资源信息
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        Set<Role> roleSet = roleService.findRolesByUserId(getUser().getId());
+        Set<String> roles = new HashSet<>();
+        Set<String> resources = new HashSet<>();
+
+        Iterator<Role> iter = roleSet.iterator();
+        while (iter.hasNext()){
+            Role role = iter.next();
+            roles.add(role.getRole());
+            //3.添加资源信息
+            Set<Resource> resourceSet = resourceService.findByRoleId(role.getId());
+            for (Resource resource : resourceSet){
+                resources.add(resource.getPermcode());
+            }
+        }
+
+        info.addRoles(roles);
+        info.addStringPermissions(resources);
+
+        return info;
+
+
 //        if (principals == null) {
 //            return null;
 //        }
@@ -149,6 +194,10 @@ public class UserRealm extends AuthorizingRealm{
                 session.setAttribute(key, value);
             }
         }
+    }
+
+    private User getUser(){
+        return (User) SecurityUtils.getSubject().getSession().getAttribute(CommonConstants.SESSION_LOGIN_KEY);
     }
 
 

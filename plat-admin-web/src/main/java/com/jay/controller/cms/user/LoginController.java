@@ -1,6 +1,6 @@
 package com.jay.controller.cms.user;
 
-import com.jay.vo.base.ResponseVo;
+import com.jay.vo.base.BaseResponseVo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.UnauthorizedException;
@@ -38,9 +38,9 @@ public class LoginController {
      */
     @PostMapping(value="")
     @ResponseBody
-    public ResponseVo login(String username, String password, String captcha){
+    public BaseResponseVo login(String username, String password, String captcha){
 
-        ResponseVo<String> responseVo = new ResponseVo<>(false);
+        BaseResponseVo<String> responseVo = new BaseResponseVo<>(false);
 
         Subject currentUser = SecurityUtils.getSubject();
         //返回信息

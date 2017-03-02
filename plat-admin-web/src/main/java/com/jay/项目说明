@@ -3,4 +3,21 @@
   1.启动redis
 3.使用技术栈
   Spring MVC + Spring Session + Spring data redis + Vue.jss + thymeleaf
-4.
+4.关于Base64转、解码和加、解密的4个注解
+  1.参数必须是JSON类型  --- 无论是get或post请求   ！！！
+     即：
+        get方式：
+             请求必须是   http://xxx/xx?eyJuYW1lIjoidmFsdWUifQ==
+        eyJuYW1lIjoidmFsdWUifQ==  <=等价=> Base64({"name":"value"});
+        post方式：http://xxx/xx
+             1.body进行Json格式的Base64加密： eyJuYW1lIjoidmFsdWUifQ==
+             2.body直接传递Json格式数据：{"name":"value"}
+
+  2.使用指定功能时，添加注解即可
+  3.注解解析在对应的xxResovler中，通过MvcConfig添加
+  4.注意：
+         Base64解码 和 解密  注解，作用在参数上
+         Base64编码 和 加密  注解，作用在方法上
+  5.使用了注解，请求必须按照指定格式，否则将报错
+
+5.

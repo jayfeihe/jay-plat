@@ -1,7 +1,7 @@
 package com.jay.controller.cms.user;
 
 import com.jay.service.base.UserService;
-import com.jay.vo.base.ResponseVo;
+import com.jay.vo.base.BaseResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,7 +50,7 @@ public class UserController {
      */
     @PostMapping("/login")
     @ResponseBody
-    public ResponseVo login(String username, String password){
+    public BaseResponseVo login(String username, String password){
 
         return null;
     }
