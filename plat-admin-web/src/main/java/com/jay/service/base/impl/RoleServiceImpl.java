@@ -14,6 +14,6 @@ public class RoleServiceImpl extends BaseCloudService implements RoleService {
 
     @Override
     public Set<Role> findRolesByUserId(Long id) {
-        return getForObj("http://"+cloudService +"/role/find/user/"+id, Set.class);
+        return getForObj("http://"+cloudService +"/role/user/"+id, Set.class);
     }
 }

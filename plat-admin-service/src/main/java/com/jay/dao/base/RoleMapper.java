@@ -1,7 +1,11 @@
 package com.jay.dao.base;
 
 import com.jay.bean.base.Role;
+import org.springframework.stereotype.Repository;
 
+import java.util.Set;
+
+@Repository
 public interface RoleMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +18,11 @@ public interface RoleMapper {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+
+    /**
+     * 查询 某个用户拥有的角色
+     * @param id
+     * @return
+     */
+    Set<Role> findByUserId(Long id);
 }

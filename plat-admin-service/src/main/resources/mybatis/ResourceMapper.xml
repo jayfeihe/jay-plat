@@ -160,4 +160,12 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="findByRoleId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+     rs.id, rs.pid, rs.title, rs.type, rs.state, rs.sort, rs.url, rs.permCode, rs.icon, rs.description, rs.create_time
+    from plat_resource rs, plat_role_resource rr
+    where rr.role_id = 1
+    and rs.id = rr.resource_id
+  </select>
 </mapper>

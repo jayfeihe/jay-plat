@@ -90,4 +90,12 @@
       available = #{available,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="findByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    r.id, r.role, r.description, r.resource_ids, r.available
+    from plat_role r, plat_user_role ur
+    where ur.user_id = #{id, jdbcType=BIGINT}
+    and r.id = ur.role_id
+  </select>
 </mapper>
